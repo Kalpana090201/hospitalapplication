@@ -17,7 +17,7 @@ export default function Home() {
             patientId: patientId, doctorId: selectedDoctorId, date: appointmentDate, time: appointmentTime
         }
         console.log(newAppointment)
-        axios.post("http://localhost:4000/api/appointments/add", newAppointment)
+        axios.post("https://hospitalapplication-4hl3.onrender.com/api/appointments/add", newAppointment)
             .then((res) => {
                 console.log(res)
                 if(res.status===201){
@@ -33,7 +33,7 @@ export default function Home() {
             })
     }
     async function fetchDoctors() {
-        await axios.get("http://localhost:4000/api/doctors")
+        await axios.get("https://hospitalapplication-4hl3.onrender.com/api/doctors")
             .then((res) => {
                 console.log(res.data)
                 setDoctors(res.data)
